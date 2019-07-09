@@ -10,6 +10,26 @@ var catalogRouter = require('./api/catalog');
 
 var app = express();
 
+var mongoose = require('mongoose');
+const configDb = require('./config/database');
+const cors = require('cors');
+
+// Header cross origin
+var corsOptions = { origin: '*', optionsSuccessStatus: 200 };
+app.use(cors(corsOptions));
+
+// On importe la conf puis on connecte via la propriété database
+mongoose.connect(configDb.database, { useNewUrlParser: true });
+mongoose.set('useFindAndModify', false);
+let db = mongoose.connection;
+mongoose.pluralize(null); // stop pluralization of collection names
+
+// Controle de la connexion
+db.once('open', () => { console.log('Connecté à MongoDB app'); });
+
+// Controle des erreur DB
+db.on('error', (err) => { console.log(err); });
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
