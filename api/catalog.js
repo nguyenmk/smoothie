@@ -22,7 +22,6 @@ router.get('/list', async function(req, res, next) {
     
     try {
         const smoothies = await Smoothie.find({});
-        console.log('Liste des smoothie: ', smoothies);
         res.send(smoothies);
     } catch (err) {
         console.log(err);
@@ -53,4 +52,16 @@ router.get('/recipe/:id', async (req, res, next) => {
         res.status(400).send(err);
     }
 })
+
+router.post('/recipe/add/', async function(req, res, next){
+    try {
+        console.log(req.body);      // your JSON
+        const smoothie = await Smoothie.create(req.body);    
+        response.send(smoothie);    // echo the result back
+    } catch (err) {
+        console.log(err);
+        res.status(400).send(err);
+    }
+});
+
 module.exports = router;
