@@ -4,8 +4,6 @@ const smoothieSchema = mongoose.Schema({
     title: { type: String, required: false },
     ingredients: [
         {nom: String, quantity: String},
-        {nom: String, quantity: String},
-        {nom: String, quantity: String}
     ],
     features: {
         cost: String ,
@@ -15,11 +13,9 @@ const smoothieSchema = mongoose.Schema({
     description: String ,
     steps: [
         { stepText: String } ,
-        { stepText: String } ,
-        { stepText: String } ,
-        { stepText: String } ,
-        { stepText: String } ,
-        { stepText: String }
+    ],
+    photo: [
+        { title: String, path: String, description: String}
     ]
 
     /*
@@ -38,4 +34,4 @@ const smoothieSchema = mongoose.Schema({
     */
 });
 
-const Smoothie = module.exports = mongoose.model('smoothie', smoothieSchema);
+const Smoothie = module.exports = mongoose.model('smoothie', smoothieSchema, );

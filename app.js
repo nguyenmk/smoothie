@@ -14,6 +14,10 @@ var mongoose = require('mongoose');
 const configDb = require('./config/database');
 const cors = require('cors');
 
+// use the public folder for static things such as images ....
+// to test, try localhost:3000/images/your_image
+app.use(express.static('public'))
+
 // Header cross origin
 var corsOptions = { origin: '*', optionsSuccessStatus: 200 };
 app.use(cors(corsOptions));

@@ -1,0 +1,63 @@
+db.getCollection("smoothies").insertMany([
+    {   "title": "Smoothie a la fraise",
+        "ingredients": [
+            {"nom": "Fraises", "quantity": "75g"},
+            {"nom": "Water", "quantity": "25cl"},
+            {"nom": "Sugar", "quantity": "20g"}
+        ],
+        "features": {
+            "cost": "1 euro",
+            "prepareTime": "5 minutes"
+        },
+        "advice": "Utilisez des fraises mures. Ajoutez 2 ou 3 feuilles de menthes pour le cote frais",
+        "description": "Super smoothie rafraichissant, prets en quelque minutes",
+        "steps": [
+            { "stepText": "Lavez les fraises a l'eau claire." },
+            { "stepText": "Eliminez le pedoncule avec un couteau pointu." },
+            { "stepText": "Placez tous les ingredients ands un bol de mixer" },
+            { "stepText": "Mixez 1 minute" },
+            { "stepText": "Servez dans un grand verre" },
+            { "stepText": "Ajoutez 2/3 feuilles de menthes si envie" }
+        ]
+    }, 
+    {   "title": "Smoothie mangue",
+        "ingredients": [
+            {"nom": "Mangue", "quantity": "1 piece"},
+            {"nom": "Water", "quantity": "50cl"},
+            {"nom": "Lait", "quantity": "50cl"},
+            {"nom": "Sugar", "quantity": "10g"}
+        ],
+        "features": {
+            "cost": "5 euro",
+            "prepareTime": "5 minutes"
+        },
+        "advice": "Utilisez une mangue par avion. Ajoutez une demi-gousse de vanille pour plus du gout",
+        "description": "Super smoothie tropical, prets en quelque minutes",
+        "steps": [
+            { "stepText": "Lavez la mangue a l'eau claire." },
+            { "stepText": "Avec un couteau non dentele, incisez la mangue le long de l'arete puis longuer de noyau des deux cote pour l'eliminer." },
+            { "stepText": "A l'aide d'une cuillere a soupe, prelevez la pulpe de la mangue en detachant la chair de la peau" },
+            { "stepText": "Mettez tous les ingredients dans un mixeur" },
+            { "stepText": "Servez dans un grand verre" }
+        ]
+    }, 
+    {   "title": "Smoothie pasteque",
+        "ingredients": [
+            {"nom": "Pasteque", "quantity": "300g de chair environ"},
+            {"nom": "Water", "quantity": "30cl"},
+            {"nom": "Glace pilee", "quantity": "selon le verre"}
+        ],
+        "features": {
+            "cost": "4.2 euro",
+            "prepareTime": "5 minutes"
+        },
+        "advice": "Choissisez une baby, les pepins sont presques inexistant. La texture sera plus agreable sans filtrer",
+        "description": "Comme en Thailande... same same, but different !",
+        "steps": [
+            { "stepText": "Lavez la pasteque avant couper." },
+            { "stepText": "Decouper les chair en petit cube" },
+            { "stepText": "Mettez tous les ingredients dans un mixeur" },
+            { "stepText": "Degoutez" }
+        ]
+    }
+]);
